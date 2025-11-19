@@ -20,7 +20,7 @@ export const certifications: Certification[] = [
   credentialUrl: "https://freecodecamp.org/certification/rania-zhiri/responsive-web-design",
   skills: ["HTML", "CSS", "Flexbox", "Grid", "Responsive Design"],
   tags: ["Web", "Frontend", "Design"],
-  image: "/public/assets/Certif1.jpg",
+  image: "/assets/Certif1.jpg",
   imageAlt: "Badge Responsive Web Design FreeCodeCamp",
   status: "active",
 },
@@ -38,7 +38,7 @@ export const certifications: Certification[] = [
     "Tests unitaires et intégration"
   ],
   tags: ["Java", "Backend", "ORM", "Persistence"],
-  image: "/public/assets/Certif2.jpg",
+  image: "/assets/Certif2.jpg",
   imageAlt: "Badge Hibernate & JPA",
   status: "active",
   },
@@ -57,7 +57,7 @@ export const certifications: Certification[] = [
     "Flux I/O"
   ],
   tags: ["Java", "Programmation", "Desktop Apps"],
-  image: "/public/assets/Certif3.jpg",
+  image: "/assets/Certif3.jpg",
   imageAlt: "Badge Fondamentaux et Concepts Avancés de Java",
   status: "active",
 }
