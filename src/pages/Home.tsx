@@ -96,9 +96,7 @@ export default function Home() {
             </div>
 
             {/* Enhanced floating badges */}
-            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full px-5 py-3 text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 animate-float">
-              ✨ Disponible
-            </div>
+          
             <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full px-4 py-2 text-xs font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-float-delayed">
               🚀 Open to work
             </div>

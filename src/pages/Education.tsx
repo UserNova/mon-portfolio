@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, MapPin, Award, GraduationCap } from "lucide-react";
-import { education, Education } from "@/data/education";
+import { education } from "@/data/education";
 
 function fmt(s?: string) {
   if (!s) return "Présent";
@@ -12,29 +12,35 @@ function fmt(s?: string) {
 
 export default function EducationPage() {
   return (
-    <section className="space-y-12 w-full max-w-7xl mx-auto overflow-x-hidden">
+    <section className="max-w-7xl w-full space-y-6 overflow-x-hidden mx-auto">
+      
       {/* Header */}
       <div className="text-center space-y-6">
         <div className="inline-flex items-center rounded-full border border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 px-6 py-3 text-sm font-medium text-blue-700 dark:text-blue-300 shadow-sm">
           <span className="mr-2">🎓</span>
           Formation Académique
         </div>
+
         <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent dark:from-white dark:via-blue-400 dark:to-purple-400 animate-gradient">
           Formations
         </h2>
+
         <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
           Mon parcours académique.
         </p>
       </div>
 
       {/* Timeline */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-x-hidden">
         <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600 shadow-lg animate-pulse"></div>
         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-400 blur-sm"></div>
         
-        <div className="space-y-8 pl-0">
-          {education.map((e, index) => (
-            <div key={e.school + (e.start ?? e.end)} className="relative flex flex-col sm:flex-row items-start gap-6 min-w-0 w-full">
+        <div className="space-y-8 pl-20">
+          {education.map((e) => (
+            <div
+              key={e.school + (e.start ?? e.end)}
+              className="relative flex flex-col sm:flex-row items-start gap-6 min-w-0 w-full"
+            >
               {/* Dot */}
               <div className="relative z-10 flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-50 animate-pulse"></div>
@@ -44,7 +50,7 @@ export default function EducationPage() {
               </div>
 
               {/* Card */}
-              <Card className="flex-1 min-w-0 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-600">
+              <Card className="flex-1 min-w-[980px] max-w-full border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-600">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg"></div>
                 
                 <CardHeader className="space-y-4 relative">

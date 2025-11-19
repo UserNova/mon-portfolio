@@ -46,7 +46,7 @@ export default function Experience() {
               </div>
 
               {/* Experience Card */}
-              <Card className="flex-1 min-w-0 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-600">
+<Card className="flex-1 min-w-[1050px] max-w-full border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-600">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg"></div>
                 
                 <CardHeader className="space-y-4 relative">

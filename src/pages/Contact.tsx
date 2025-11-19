@@ -1,23 +1,23 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Phone, MapPin, Send, MessageCircle, Github, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Contact() {
   const email = "rania.zhirii@gmail.com";
   const phone = "+212 649688653";
   const location = "Marrakech, Maroc";
+  const linkedinUrl = "https://www.linkedin.com/in/rania-zhiri-3a6301290";
 
   const handleEmailClick = () => {
     const subject = "Prise de contact depuis votre portfolio";
     const body = `Bonjour,\n\nJe vous contacte suite à la visite de votre portfolio.\n\n[Ceci est un modèle - veuillez modifier le contenu]\n\nCordialement,\n[Votre nom]`;
-    
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
-    <div className="space-y-8 w-full max-w-7xl mx-auto">
+    <div className="space-y-8 w-full max-w-7xl mx-auto px-4">
       <Helmet>
         <title>Contact — ZHIRI Rania</title>
         <meta name="description" content="Contactez-moi pour discuter de vos projets et collaborations" />
@@ -35,52 +35,60 @@ export default function Contact() {
       </div>
 
       {/* Contact Cards Grid */}
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
+      <div className="flex flex-col md:flex-row flex-wrap gap-6 w-full justify-center">
         {/* Email Card */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-          <CardContent className="p-6 text-center space-y-4">
+        <Card className="w-full md:w-[28rem] lg:w-[32rem] p-6 rounded-2xl group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+          <CardContent className="text-center space-y-4">
             <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
               <Mail className="w-6 h-6 text-white" />
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 break-all">{email}</p>
-            </div>
+            <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 break-all">{email}</p>
           </CardContent>
         </Card>
 
         {/* Phone Card */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-          <CardContent className="p-6 text-center space-y-4">
+        <Card className="w-full md:w-[28rem] lg:w-[32rem] p-6 rounded-2xl group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+          <CardContent className="text-center space-y-4">
             <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
               <Phone className="w-6 h-6 text-white" />
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-slate-900 dark:text-white">Téléphone</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{phone}</p>
-            </div>
+            <h3 className="font-semibold text-slate-900 dark:text-white">Téléphone</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">{phone}</p>
           </CardContent>
         </Card>
 
         {/* Location Card */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-          <CardContent className="p-6 text-center space-y-4">
+        <Card className="w-full md:w-[28rem] lg:w-[32rem] p-6 rounded-2xl group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+          <CardContent className="text-center space-y-4">
             <div className="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
               <MapPin className="w-6 h-6 text-white" />
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-slate-900 dark:text-white">Localisation</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{location}</p>
-            </div>
+            <h3 className="font-semibold text-slate-900 dark:text-white">Localisation</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">{location}</p>
           </CardContent>
         </Card>
+
+        {/* LinkedIn Card */}
+        <Card className="w-full md:w-[28rem] lg:w-[32rem] p-6 rounded-2xl group hover:shadow-lg transition-all duration-300 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+          <CardContent className="text-center space-y-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <Linkedin className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="font-semibold text-slate-900 dark:text-white">LinkedIn</h3>
+            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 dark:text-slate-400 break-all hover:underline">
+              {linkedinUrl}
+            </a>
+          </CardContent>
+        </Card>
+
+       
       </div>
 
-      {/* Main Contact Card */}
+      {/* Main Contact Card with Email Button */}
       <div className="w-full">
         <div className="max-w-2xl mx-auto">
           <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden">
-            {/* Card Header with Gradient */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-center">
               <MessageCircle className="w-12 h-12 text-white mx-auto mb-3" />
               <h2 className="text-2xl font-bold text-white">Envoyez-moi un message</h2>
@@ -90,7 +98,6 @@ export default function Contact() {
             </div>
 
             <CardContent className="p-8 space-y-6">
-              {/* Availability Badge */}
               <div className="flex justify-center">
                 <Badge variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700 px-4 py-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
@@ -98,18 +105,12 @@ export default function Contact() {
                 </Badge>
               </div>
 
-              {/* Contact Info */}
               <div className="space-y-4">
-                <div className="text-center space-y-2">
-                  <p className="text-slate-600 dark:text-slate-400">
-                    La manière la plus rapide de me contacter est par email. 
-                    Cliquez sur le bouton ci-dessous pour ouvrir votre client email 
-                    avec un message pré-rempli.
-                  </p>
-                </div>
+                <p className="text-slate-600 dark:text-slate-400 text-center">
+                  La manière la plus rapide de me contacter est par email. Cliquez sur le bouton ci-dessous pour ouvrir votre client email avec un message pré-rempli.
+                </p>
               </div>
 
-              {/* Email Button */}
               <Button 
                 onClick={handleEmailClick}
                 size="lg"
@@ -118,25 +119,6 @@ export default function Contact() {
                 <Send className="h-4 w-4 mr-2 transition-transform group-hover:translate-x-1" />
                 M'envoyer un email
               </Button>
-
-              {/* Alternative Contact Methods */}
-              <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Vous pouvez aussi me contacter directement par téléphone ou via les réseaux sociaux
-                </p>
-                
-                <div className="flex justify-center gap-4">
-                  <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                    <Phone className="w-4 h-4" />
-                    <span>{phone}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                    <Mail className="w-4 h-4" />
-                    <span className="hidden sm:inline">{email}</span>
-                    <span className="sm:hidden">Email</span>
-                  </div>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>

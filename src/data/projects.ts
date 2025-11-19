@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "Gestion de biblio",
     period: "2025",
     tags: ["Spring Data JPA / Hibernate","Thymeleaf","HTML5","CSS3", "Bootstrap 5"],
-    summary: "CL’application permet de gérer les livres, leurs auteurs et les emprunts, tout en affichant les statuts (disponible / emprunté).",
+    summary: "L’application permet de gérer les livres, leurs auteurs et les emprunts, tout en affichant les statuts (disponible / emprunté).",
     repo: "https://github.com/UserNova/GestionBiblio.git"
   }
 
