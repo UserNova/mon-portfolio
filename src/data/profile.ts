@@ -10,6 +10,6 @@ export const profile = {
   skills: [ 
   "Html, css, Laravel, Python, PHP, Java, Spring Boot, JakartaEE, SQL, MySQL, PostgreSQL, Node.js, React.js, TypeScript, JavaScript, Android, GraphQL, REST API, SOAP, Docker, Microservices, AR, VR, Unity"
 ],
-  image: "/public/rania.jpg",
+  image: "public/assets/rania.jpg",
 
 };
