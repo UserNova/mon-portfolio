@@ -28,6 +28,7 @@ export const certifications: Certification[] = [
     title: "Hibernate & JPA",
     issuer: "mliaedu.toubkalit",
     issueDate: "2025-10",
+    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/28-505f2e03-cda0-4cf6-ae88-a8e0e280bf8e-442797",
     skills: [
     "JPA", 
     "Hibernate", 
@@ -46,7 +47,8 @@ export const certifications: Certification[] = [
   {
   title: "Fondamentaux et Concepts Avancés de la Programmation Java",
   issuer: "mliaedu.toubkalit",
-  issueDate: "2025-07",
+  issueDate: "2025-10",
+  credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/6-505f2e03-cda0-4cf6-ae88-a8e0e280bf8e-165065",
   skills: [
     "Java", 
     "POO", 
@@ -60,6 +62,28 @@ export const certifications: Certification[] = [
   image: "/assets/Certif3.jpg",
   imageAlt: "Badge Fondamentaux et Concepts Avancés de Java",
   status: "active",
+},
+
+ {
+  title: "Développement Front-End Moderne avec React",
+  issuer: "mliaedu.toubkalit",
+  issueDate: "2025-11",
+  credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/26-505f2e03-cda0-4cf6-ae88-a8e0e280bf8e-399520",
+  skills: [
+    "Hooks (useState, useEffect, useContext)",
+    "Routing (React Router)",
+    "Gestion d’état globale",
+    "HOC (High-Order Components)",
+    "Render Props",
+    "Tests automatisés",
+    "CRUD",
+  ],
+  tags: ["React", "JavaScript", "Front-End", "Web Development"],
+  image: "/assets/Certif3.jpg",
+  imageAlt: "Badge Développement Front-End Moderne avec React",
+  status: "active"
 }
+
+
 
 ];
