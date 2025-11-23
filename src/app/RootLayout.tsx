@@ -1,11 +1,38 @@
 import { Outlet, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Moon, Sun, Linkedin, Github } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function RootLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Vérifier le thème au chargement
+    const isDark = localStorage.theme === 'dark' || 
+                  (!('theme' in localStorage) && 
+                   window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  };
 
   const navigation = [
     { name: "Accueil", href: "/" },
@@ -25,12 +52,12 @@ export default function RootLayout() {
               to="/" 
               className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
             >
-              <span>MonPortfolio</span>
+              <span>ZHIRI Rania</span>
             </NavLink>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
-              {navigation.slice(1).map((item) => (
+            <div className="hidden md:flex items-center space-x-4">
+              {navigation.map((item) => (
                 <NavLink
                   key={item.name}
                   to={item.href}
@@ -46,10 +73,46 @@ export default function RootLayout() {
                   {item.name}
                 </NavLink>
               ))}
+
+              {/* Social Links and Dark Mode Toggle */}
+              <div className="flex items-center space-x-2 ml-4 border-l border-slate-200 dark:border-slate-700 pl-4">
+                <a
+                  href="https://www.linkedin.com/in/rania-zhiri-3a6301290"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://github.com/UserNova"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-slate-600 hover:text-gray-900 dark:text-slate-300 dark:hover:text-white transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <button
+                  onClick={toggleDarkMode}
+                  className="p-2 rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700 transition-colors"
+                  aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                >
+                  {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                </button>
+              </div>
             </div>
 
-            {/* Mobile Menu */}
-            <div className="md:hidden">
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center space-x-2">
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700 transition-colors"
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -61,17 +124,18 @@ export default function RootLayout() {
             </div>
           </div>
 
+          {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="md:hidden py-4 border-t border-slate-200 dark:border-slate-700">
               <div className="flex flex-col space-y-2">
-                {navigation.slice(1).map((item) => (
+                {navigation.map((item) => (
                   <NavLink
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={({ isActive }) =>
                       cn(
-                        "block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                        "flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         isActive
                           ? "bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400"
                           : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
@@ -81,6 +145,26 @@ export default function RootLayout() {
                     {item.name}
                   </NavLink>
                 ))}
+                <div className="flex items-center justify-center space-x-4 pt-2">
+                  <a
+                    href="https://www.linkedin.com/in/rania-zhiri-3a6301290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://github.com/UserNova"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-slate-600 hover:text-gray-900 dark:text-slate-300 dark:hover:text-white transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             </div>
           )}

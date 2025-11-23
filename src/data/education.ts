@@ -19,7 +19,19 @@ export const education: Education[] = [
     start: "2024-09",
     highlights: ["Actuellement en cours", "Projets et travaux pratiques en Informatique"],
   },
+  
   {
+    school: "ENS Marrakech",
+    degree: "Licence",
+    field: "Licence en informatique ",
+    location: "Marrakech",
+    start: "2021-09",
+    end: "2024-07",
+    highlights: ["Mention Assez Bien"],
+  },
+  
+
+ {
     school: "Maghreb Arabi Lycée",
     degree: "Baccalauréat",
     field: "Sciences Physiques",
@@ -27,5 +39,5 @@ export const education: Education[] = [
     start:"2017",
     end: "2020",
     highlights: ["Mention Bien"],
-  },
+  }
 ];
