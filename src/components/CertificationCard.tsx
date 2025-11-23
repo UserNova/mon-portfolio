@@ -56,7 +56,7 @@ export default function CertificationCard({ c }: { c: Certification }) {
 
       {(c.skills?.length || c.tags?.length) && (
         <div className="space-y-4 mt-4">
-          {c.skills?.length > 0 && (
+         {(c.skills && c.skills.length > 0) && (
             <div>
               <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2 flex items-center">
                 <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ export default function CertificationCard({ c }: { c: Certification }) {
             </div>
           )}
 
-          {c.tags?.length > 0 && (
+{(c.tags && c.tags.length > 0) && (
             <div>
               <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2 flex items-center">
                 <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -98,16 +98,14 @@ export default function Experience() {
                           {exp.organization}
                         </span>
                       </div>
-                      <CardDescription className="text-xs sm:text-sm md:text-base text-blue-600 dark:text-blue-400 font-medium">
-                        {exp.role}
-                      </CardDescription>
+                      
                     </div>
                     
                     <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 px-2.5 py-1 rounded-full shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-900/20">
                       <CalendarDays className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
                       <span className="whitespace-nowrap">
-                        {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Présent'}
-                      </span>
+  {exp.period}
+</span>
                     </div>
                   </div>
                 </CardHeader>
