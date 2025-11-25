@@ -82,6 +82,28 @@ export const certifications: Certification[] = [
   image: "/assets/Certif3.jpg",
   imageAlt: "Badge Développement Front-End Moderne avec React",
   status: "active"
+},
+
+{
+  title: "Développement JakartaEE : Spring",
+  issuer: "mliaedu.toubkalit",
+  issueDate: "2025-11",
+  credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/17-505f2e03-cda0-4cf6-ae88-a8e0e280bf8e-446329",
+  skills: [
+  "JPA & Hibernate (ORM)",
+  "Création d’API REST avec Spring Boot",
+  "JWT (JSON Web Tokens)",
+  "OAuth2 (Google / Keycloak)",
+  "Swagger / OpenAPI",
+  "Déploiement sur Tomcat",
+  "Automatisation avec Bash",
+  "Monitoring"
+],
+
+  tags: [ "Spring Boot", "Spring MVC", "Spring Security"],
+  image: "/assets/Certif5.jpg",
+  imageAlt: "Badge Développement JakartaEE : Spring",
+  status: "active"
 }
 
 
